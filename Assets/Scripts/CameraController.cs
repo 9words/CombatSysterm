@@ -39,10 +39,11 @@ public class CameraController : MonoBehaviour
         
         var targetrotation = Quaternion.Euler(rotationX, rotationY, 0);
         
-        var focuposition = transform.position + new Vector3( farmingOffset.x, farmingOffset.y);//设置一个镜头焦点，镜头应该照着人物的胸部以上位置
+        var focuposition = followTraget.position + new Vector3( farmingOffset.x, farmingOffset.y);//设置一个镜头焦点，镜头应该照着人物的胸部以上位置
         
         transform.position = focuposition - targetrotation * new Vector3(0, 0, distance);
         transform.rotation = targetrotation;
     }
+    public Quaternion PlanarRotation => Quaternion.Euler(0, rotationY, 0);//提供相机的平面旋转
 
 }
