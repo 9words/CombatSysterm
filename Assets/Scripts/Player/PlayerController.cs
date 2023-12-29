@@ -20,14 +20,22 @@ public class PlayerController : MonoBehaviour
     CameraController cameraController;
     Animator animator;
     CharacterController charactercontroller;
+    MeeleFighter meeleFighter;
     private void Awake()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
         animator=GetComponent<Animator>();
         charactercontroller = GetComponent<CharacterController>();//角色碰撞器的中心的y值一般为角色碰撞器高度的一半+蒙皮宽度（skin width）
+        meeleFighter = GetComponent<MeeleFighter>();
     }
     private void Update()
     {
+        if (meeleFighter.InAction)
+        {
+            animator.SetFloat("moveAmount",0f);//如果在奔跑的时候突然攻击，攻击结束之后要重置移动量，不然会回到奔跑的动画但其实是没有按键去移动的
+            return;//如果在播放攻击动作时不能进行移动
+        }
+            
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         float moveAmount =Mathf.Clamp01(Mathf.Abs( h) + Mathf.Abs(v));//人物移动的量做为动画混合树的移动量，需要限制在0-1之间
