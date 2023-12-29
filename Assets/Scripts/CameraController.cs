@@ -41,11 +41,11 @@ public class CameraController : MonoBehaviour
         }*/
         invertYval = (invertY) ? -1 : 1;
 
-        rotationX += Input.GetAxis("Mouse Y")* invertYval * rotatespeed;//鼠标的上下移动决定镜头绕X轴旋转
+        rotationX += Input.GetAxis("Camera Y") * invertYval * rotatespeed;//操纵杆或者鼠标的上下移动决定镜头绕X轴旋转
         rotationX = Mathf.Clamp(rotationX, minVerticalangle, maxVerticalangle);//限制镜头上下移动的角度
        
-        rotationY += Input.GetAxis("Mouse X")* invertXval * rotatespeed;//鼠标的左右移动决定镜头绕Y轴旋转
-        
+        rotationY += Input.GetAxis("Camera X") * invertXval * rotatespeed;//操纵杆或者鼠标的左右移动决定镜头绕Y轴旋转
+
         var targetrotation = Quaternion.Euler(rotationX, rotationY, 0);
         
         var focuposition = followTraget.position + new Vector3( farmingOffset.x, farmingOffset.y);//设置一个镜头焦点，镜头应该照着人物的胸部以上位置
