@@ -256,7 +256,7 @@ MonoBehaviour:
   followTraget: {fileID: 1752319550}
   distance: 5
   rotatespeed: 2
-  minVerticalangle: -20
+  minVerticalangle: -10
   maxVerticalangle: 45
   farmingOffset: {x: 0, y: 1}
   invertX: 0
@@ -474,6 +474,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brute
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d2730ac61846194bb712fd2282f31fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6d2730ac61846194bb712fd2282f31fb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 695fba06704af4c44bb7391d5e80e4bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d2730ac61846194bb712fd2282f31fb, type: 3}
 --- !u!1 &1607445984
@@ -579,6 +587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752319550}
   - component: {fileID: 1752319551}
+  - component: {fileID: 1752319552}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -615,3 +624,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 500
+--- !u!95 &1752319552
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752319549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+  m_Controller: {fileID: 9100000, guid: 695fba06704af4c44bb7391d5e80e4bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
