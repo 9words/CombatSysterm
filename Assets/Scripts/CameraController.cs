@@ -30,6 +30,15 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         invertXval = (invertX) ? -1 : 1;//倒转相机的判断
+        //等同一下
+        /*if(invertX)
+        {
+            invertXval = -1;
+        }
+        else
+        {
+            invertXval = 1;
+        }*/
         invertYval = (invertY) ? -1 : 1;
 
         rotationX += Input.GetAxis("Mouse Y")* invertYval * rotatespeed;//鼠标的上下移动决定镜头绕X轴旋转
@@ -45,5 +54,10 @@ public class CameraController : MonoBehaviour
         transform.rotation = targetrotation;
     }
     public Quaternion PlanarRotation => Quaternion.Euler(0, rotationY, 0);//提供相机的平面旋转
+    //等同以下函数
+   /* public Quaternion PlanarRotation()
+    {
+        return Quaternion.Euler(0,rotationY,0);
+    }*/
 
 }
