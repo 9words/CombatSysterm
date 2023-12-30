@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Player\CameraController.cs" />
     <Compile Include="Assets\Scripts\CombatSystem\MeeleFighter.cs" />
     <Compile Include="Assets\VarcanRex\LongSword\Scripts\SimpleRotate.cs" />
+    <Compile Include="Assets\Scripts\CombatSystem\AttackData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
