@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: SlashHorizontal
   m_EditorClassIdentifier: 
   <AniNmae>k__BackingField: SlashHorizontal
+  <HitBoxToUse>k__BackingField: 4
   <ImpactStartTime>k__BackingField: 0.2
   <ImpactEndTime>k__BackingField: 0.36

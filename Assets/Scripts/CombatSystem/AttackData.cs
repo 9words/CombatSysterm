@@ -8,10 +8,12 @@ public class AttackData : ScriptableObject//为了摆脱硬编码（即将变量在代码里面给
 {
     [field :SerializeField] public string AniNmae { get; private set; }
 
+    [field: SerializeField] public AttackHitbox HitBoxToUse { get; private set; }
+
     [field: SerializeField] public float ImpactStartTime { get; private set; }//动画的百分比
 
     [field: SerializeField] public float ImpactEndTime { get; private set; }//动画的百分比
 
-
+    public enum AttackHitbox {LeftHand,RightHand,LeftFoot,RightFoot,Sword }
 
 }

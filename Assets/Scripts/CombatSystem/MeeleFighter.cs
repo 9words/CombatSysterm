@@ -10,6 +10,7 @@ public class MeeleFighter : MonoBehaviour
     [SerializeField] List<AttackData> attacks;//攻击列表
     [SerializeField] GameObject sword;
     BoxCollider swordCollider;
+    SphereCollider leftHandCollider, rightHandCollider, leftFootCollider, rightFootConllider;
 
     Animator animator;
     AttackState attackState;
@@ -27,7 +28,13 @@ public class MeeleFighter : MonoBehaviour
         if(sword!=null)
         {
             swordCollider = sword.GetComponent<BoxCollider>();
-            swordCollider.enabled = false;
+            leftHandCollider=animator.GetBoneTransform(HumanBodyBones.LeftHand).GetComponent<SphereCollider>();
+            rightHandCollider = animator.GetBoneTransform(HumanBodyBones.RightHand).GetComponent<SphereCollider>();
+            leftFootCollider = animator.GetBoneTransform(HumanBodyBones.LeftFoot).GetComponent<SphereCollider>();
+            rightFootConllider = animator.GetBoneTransform(HumanBodyBones.RightFoot).GetComponent<SphereCollider>();
+
+            DisableAllHitboxes();
+
         }
     }
     public void TryToAttack()
@@ -65,7 +72,7 @@ public class MeeleFighter : MonoBehaviour
                 {
                     attackState = AttackState.Impact;//状态改为挥砍
                     //启用碰撞
-                    swordCollider.enabled = true;
+                    EnableHitboxes(attacks[ComboCount]);
                 }
             }
             else if(attackState==AttackState.Impact)//处于攻击的挥砍阶段
@@ -74,7 +81,7 @@ public class MeeleFighter : MonoBehaviour
                 {
                     attackState = AttackState.Cooldown;//状态改为冷却
                     //禁用碰撞
-                    swordCollider.enabled = false;
+                    DisableAllHitboxes();
                 }
             }
             else if(attackState==AttackState.Cooldown)//处于冷却阶段的
@@ -120,5 +127,35 @@ public class MeeleFighter : MonoBehaviour
         yield return new WaitForSeconds(animState.length*0.8f);//等到攻击的动画的80%播放完
         InAction = false;
     }
-
+    void EnableHitboxes(AttackData attack)
+    {
+        switch (attack.HitBoxToUse)
+        {
+            case AttackData.AttackHitbox.LeftHand:
+                leftHandCollider.enabled = true;
+                break;
+            case AttackData.AttackHitbox.RightHand:
+                rightHandCollider.enabled = true;
+                break;
+            case AttackData.AttackHitbox.LeftFoot:
+                leftFootCollider.enabled = true;
+                break;
+            case AttackData.AttackHitbox.RightFoot:
+                rightFootConllider.enabled =true;
+                break;
+            case AttackData.AttackHitbox.Sword:
+                swordCollider.enabled = true;
+                break;
+            default:
+                break;
+        }
+    }
+    void DisableAllHitboxes()
+    {
+        swordCollider.enabled = false;
+        leftHandCollider.enabled = false;
+        rightHandCollider.enabled = false;
+        leftFootCollider.enabled = false;
+        rightFootConllider.enabled = false;
+    }
 }

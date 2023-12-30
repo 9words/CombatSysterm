@@ -373,6 +373,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &321338920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2084811680363313996, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+  m_PrefabInstance: {fileID: 347063952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &321338921
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321338920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &347063952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,9 +442,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4728426434207774260, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4728426434207774260, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_TagString
+      value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: -2084811680363313996, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -2084811680363313996, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_TagString
+      value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: -751476226918971245, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -751476226918971245, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_TagString
+      value: HitBox
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
       propertyPath: m_Name
       value: Erika Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715566404302941441, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715566404302941441, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+      propertyPath: m_TagString
+      value: HitBox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
@@ -435,20 +485,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
   m_PrefabInstance: {fileID: 347063952}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &439923023
-CapsuleCollider:
+--- !u!1 &547819144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4728426434207774260, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+  m_PrefabInstance: {fileID: 347063952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &547819145
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149144719764}
+  m_GameObject: {fileID: 547819144}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &961629767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -751476226918971245, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+  m_PrefabInstance: {fileID: 347063952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &961629768
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961629767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1041572842
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,11 +928,29 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dcdcd02f681dec54fb9e213715679308, type: 2}
   - {fileID: 11400000, guid: 1e0862f60f7610646b1958925508d981, type: 2}
   sword: {fileID: 218904176}
+--- !u!1 &2133764614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2715566404302941441, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
+  m_PrefabInstance: {fileID: 347063952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2133764615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 9d2ed05180371cf459efb8c84797a117, type: 3}
   m_PrefabInstance: {fileID: 347063952}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &2133764616
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133764614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9171100470436412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,8 +1388,8 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653617933102}
   - component: {fileID: 5866666021924114772}
-  - component: {fileID: 439923023}
   - component: {fileID: 919132149144719765}
+  - component: {fileID: 919132149144719766}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -1321,6 +1411,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attacks: []
   sword: {fileID: 0}
+--- !u!143 &919132149144719766
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149144719764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.8
+  m_Radius: 0.4
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!4 &1031632034225598835
 Transform:
   m_ObjectHideFlags: 0
